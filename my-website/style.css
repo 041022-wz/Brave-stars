@@ -1,0 +1,325 @@
+/* 设置页面背景颜色和字体 */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #090909; /* 淡灰蓝色背景，更加柔和 */
+    color: #333; /* 黑色字体 */
+    margin: 0;
+    padding: 0;
+}
+
+/* 页面头部 */
+header {
+    background-color: #003366; /* 深蓝色背景 */
+    color: rgb(28, 26, 26);
+    padding: 15px 20px;
+    text-align: center;
+}
+
+header h1 {
+    font-size: 2.5em;
+}
+
+header ul {
+    list-style-type: none;
+    padding: 0;
+    background-color: #f9c900; /* 明亮黄色背景 */
+}
+
+header ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+header ul li a {
+    color: #003366; /* 深蓝色字体 */
+    text-decoration: none;
+    font-size: 1.2em;
+}
+
+header ul li a:hover {
+    text-decoration: underline;
+}
+
+/* 主横幅 */
+.main-banner {
+
+    text-align: center;
+    background-color: #003366; /* 深蓝色背景 */
+    color: #0f0e0e;
+    padding: 50px 0;
+}
+
+.main-banner h2 {
+    font-size: 3em;
+    color: #f9c900; /* 黄色文字 */
+}
+
+.main-banner p {
+    font-size: 1.5em;
+    color: #f5f4f4;
+}
+
+/* 课程卡片部分 */
+.courses {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    padding: 40px;
+    flex-wrap: wrap;
+}
+
+.course-card {
+    background-color: #ffffff;
+    border: 2px solid #d5dbdb; /* 淡灰色边框 */
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    width: 280px;
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.course-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+}
+
+.course-card h3 {
+    font-size: 1.8em;
+    color: #003366; /* 深蓝色字体 */
+    margin-bottom: 15px;
+}
+
+.course-card p {
+    font-size: 1.2em;
+    color: #4f4f4f; /* 深灰色字体 */
+    margin-bottom: 20px;
+}
+
+.course-card a {
+    display: inline-block;
+    padding: 10px 25px;
+    background-color: #f9c900; /* 黄色按钮 */
+    color: #003366; /* 深蓝色字体 */
+    text-decoration: none;
+    border-radius: 10px;
+    font-size: 1.1em;
+    transition: background-color 0.3s;
+}
+
+.course-card a:hover {
+    background-color: #e0a900; /* 按钮悬停时的稍微深色黄色 */
+}
+
+/* 页脚 */
+footer {
+    text-align: center;
+    background-color: #003366; /* 深蓝色背景 */
+    color: white;
+    padding: 20px 0;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    font-size: 1.2em;
+}
+
+/* 列表部分，添加在页面其他地方的课程链接 */
+ul {
+    padding: 20px;
+    text-align: center;
+    background-color: #f0f2f5; /* 淡灰色背景 */
+}
+
+ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+ul li a {
+    color: #003366; /* 深蓝色链接 */
+    text-decoration: none;
+    font-size: 1.2em;
+}
+
+ul li a:hover {
+    text-decoration: underline;
+}
+/* 设置页面背景和字体 */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9; /* 浅灰色背景 */
+    color: #333; /* 黑色文字 */
+    margin: 0;
+    padding: 0;
+}
+
+/* 特定页面的样式，只对 special-education 部分有效 */
+#special-education-section {
+    background-color: #f5f5f5; /* 给特定页面区域设置背景色 */
+    padding: 40px; /* 设置内边距 */
+}
+
+/* 课程链接部分的样式 */
+#special-education-section .course-links {
+    display: flex;
+    justify-content: center; /* 使课程卡片居中 */
+    gap: 20px; /* 设置课程卡片之间的间距 */
+    padding: 20px;
+    flex-wrap: wrap;
+}
+
+#special-education-section .course-card {
+    background-color: white;
+    border: 1px solid #d5d5d5;
+    border-radius: 10px;
+    padding: 20px;
+    width: 250px; /* 课程卡片的固定宽度 */
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+    flex-shrink: 0; /* 确保卡片不会缩小 */
+}
+
+#special-education-section .course-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+}
+
+#special-education-section .course-card h4 {
+    color: #003366; /* 深蓝色字体 */
+}
+
+#special-education-section .course-card a {
+    text-decoration: none;
+    color: #27ae60; /* 绿色按钮 */
+    font-size: 1.2em;
+}
+
+#special-education-section .course-card p {
+    color: #555;
+    font-size: 1em;
+    margin-top: 10px;
+}
+
+/* 页脚 */
+footer {
+    text-align: center;
+    background-color: #003366; /* 深蓝色背景 */
+    color: white;
+    padding: 20px 0;
+    font-size: 1.2em;
+}
+/* 设置页面背景颜色和字体 */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f9f9f9; /* 浅灰色背景 */
+    color: #333; /* 黑色字体 */
+    margin: 0;
+    padding: 0;
+}
+
+/* 页面头部 */
+header {
+    background-color: #003366; /* 深蓝色背景 */
+    color: white;
+    padding: 15px 20px;
+    text-align: center;
+}
+
+header h1 {
+    font-size: 2.5em;
+}
+
+header nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+header nav ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+header nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.2em;
+}
+
+header nav ul li a:hover {
+    text-decoration: underline;
+}
+
+/* 主内容区域布局 */
+.main-content {
+    display: flex;
+    padding: 40px;
+    gap: 30px;
+}
+
+/* 左侧导航栏样式 */
+.sidebar {
+    width: 20%;
+    background-color: #f1f1f1;
+    padding: 20px;
+}
+
+.sidebar h3 {
+    font-size: 1.5em;
+    color: #003366;
+}
+
+/* 使用 Flexbox 布局排列菜单项 */
+.sidebar ul {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* 居中显示菜单项 */
+}
+
+.sidebar ul li {
+    margin: 10px 20px; /* 控制菜单项之间的间距 */
+    text-align: center; /* 让每个菜单项居中 */
+}
+
+.sidebar ul li a {
+    color: #003366;
+    text-decoration: none;
+    font-size: 1.1em;
+    display: block;
+}
+
+.sidebar ul li a:hover {
+    text-decoration: underline;
+}
+
+/* 右侧视频区域样式 */
+.content {
+    flex: 1;
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* 视频容器样式 */
+.video-container {
+    margin-top: 20px;
+    text-align: center;
+}
+
+iframe {
+    width: 100%;
+    max-width: 560px;
+    height: 315px;
+}
+
+/* 页脚 */
+footer {
+    text-align: center;
+    background-color: #003366;
+    color: white;
+    padding: 20px 0;
+    font-size: 1.2em;
+}
