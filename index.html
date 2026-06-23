@@ -4,16 +4,18 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Brave-Stars · Special Education Platform</title>
-    
-    <!-- Bootstrap 5.3 -->
+
+    <!-- Bootstrap 5.3 CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" />
-    
+
     <!-- Custom Styles -->
     <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
-    <!-- ===== HEADER ===== -->
+    <!-- ======================================== -->
+    <!-- HEADER -->
+    <!-- ======================================== -->
     <header style="background-color: #003366;" class="text-white">
         <nav class="navbar navbar-expand-md container">
             <a class="navbar-brand text-white fw-bold" href="index.html">⭐ Brave-Stars</a>
@@ -31,13 +33,17 @@
         </nav>
     </header>
 
-    <!-- ===== HERO BANNER ===== -->
+    <!-- ======================================== -->
+    <!-- HERO BANNER -->
+    <!-- ======================================== -->
     <section class="text-center text-dark py-5" style="background-color: #f9c900;">
         <h2 class="fw-bold">Learn for the Stars, Anywhere, Anytime</h2>
         <p class="fs-5">Free open courses for special education · AI-powered support</p>
     </section>
 
-    <!-- ===== COURSE CARDS ===== -->
+    <!-- ======================================== -->
+    <!-- THREE COURSE CARDS (with Modal triggers) -->
+    <!-- ======================================== -->
     <section class="container my-5">
         <div class="row">
 
@@ -47,8 +53,10 @@
                     <div class="card-body">
                         <h3 class="card-title text-dark fw-bold">📚 Special Education</h3>
                         <p class="card-text">Curated courses from home and abroad for teachers, parents, and professionals.</p>
-                        <!-- ✅ 添加了 id="btnSpecialEducation" -->
-                        <a href="special-education.html" id="btnSpecialEducation" class="btn btn-lg" style="background-color: #f9c900; color: #003366; font-weight: bold;">Explore</a>
+                        <!-- ✅ 按钮触发 Modal 1，不再使用 href 跳转 -->
+                        <button type="button" class="btn btn-lg" style="background-color: #f9c900; color: #003366; font-weight: bold;" data-bs-toggle="modal" data-bs-target="#modalSpecialEducation">
+                            Explore
+                        </button>
                     </div>
                 </div>
             </div>
@@ -59,8 +67,10 @@
                     <div class="card-body">
                         <h3 class="card-title text-dark fw-bold">🤝 Community</h3>
                         <p class="card-text">Share experiences, ask questions, and grow together with educators worldwide.</p>
-                        <!-- ✅ 添加了 id="btnCommunity" -->
-                        <a href="community.html" id="btnCommunity" class="btn btn-lg" style="background-color: #f9c900; color: #003366; font-weight: bold;">Join</a>
+                        <!-- ✅ 按钮触发 Modal 2 -->
+                        <button type="button" class="btn btn-lg" style="background-color: #f9c900; color: #003366; font-weight: bold;" data-bs-toggle="modal" data-bs-target="#modalCommunity">
+                            Join
+                        </button>
                     </div>
                 </div>
             </div>
@@ -71,8 +81,10 @@
                     <div class="card-body">
                         <h3 class="card-title text-dark fw-bold">💬 AI Chat</h3>
                         <p class="card-text">Release pressure, practice conversations, and receive emotional support from AI.</p>
-                        <!-- ✅ 添加了 id="btnChatAI" -->
-                        <a href="chatbox.html" id="btnChatAI" class="btn btn-lg" style="background-color: #f9c900; color: #003366; font-weight: bold;">Be Happy</a>
+                        <!-- ✅ 按钮触发 Modal 3 -->
+                        <button type="button" class="btn btn-lg" style="background-color: #f9c900; color: #003366; font-weight: bold;" data-bs-toggle="modal" data-bs-target="#modalAIChat">
+                            Be Happy
+                        </button>
                     </div>
                 </div>
             </div>
@@ -80,16 +92,160 @@
         </div>
     </section>
 
-    <!-- ===== FOOTER ===== -->
+    <!-- ======================================== -->
+    <!-- FOOTER -->
+    <!-- ======================================== -->
     <footer style="background-color: #003366;" class="text-white text-center py-3">
         <p class="mb-0">&copy; 2026 Brave-Stars. All rights reserved.</p>
         <p class="mb-0" style="font-size:0.85rem; opacity:0.7;">Built with ❤️ for inclusive education</p>
     </footer>
 
-    <!-- Bootstrap JS -->
+
+    <!-- ======================================== -->
+    <!-- MODAL 1: Special Education -->
+    <!-- ======================================== -->
+    <div class="modal fade" id="modalSpecialEducation" tabindex="-1" aria-labelledby="modalSpecialEducationLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header" style="background-color: #003366; color: white;">
+                    <h5 class="modal-title fw-bold" id="modalSpecialEducationLabel">📚 Special Education Resources</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <h5>What We Offer</h5>
+                    <p>Brave-Stars curates high-quality special education resources from both domestic and international sources, making them freely accessible to teachers, parents, and researchers.</p>
+
+                    <div class="row mt-4">
+                        <div class="col-md-6">
+                            <h6>📖 Featured Content</h6>
+                            <ul>
+                                <li>Video lectures from special education experts</li>
+                                <li>Case studies and teaching strategies</li>
+                                <li>Research papers and policy updates</li>
+                            </ul>
+                        </div>
+                        <div class="col-md-6">
+                            <h6>🎯 Who Benefits</h6>
+                            <ul>
+                                <li>Teachers in under-resourced regions</li>
+                                <li>Parents seeking professional guidance</li>
+                                <li>Researchers and policy makers</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="mt-3 p-3" style="background-color: #f0f4f8; border-radius: 8px;">
+                        <strong>🔗 Key Feature:</strong> Open access — all materials are free and regularly updated with the latest research.
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <a href="special-education.html" class="btn" style="background-color: #f9c900; color: #003366; font-weight: bold;">View Courses →</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- ======================================== -->
+    <!-- MODAL 2: Community -->
+    <!-- ======================================== -->
+    <div class="modal fade" id="modalCommunity" tabindex="-1" aria-labelledby="modalCommunityLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header" style="background-color: #003366; color: white;">
+                    <h5 class="modal-title fw-bold" id="modalCommunityLabel">🤝 Brave-Stars Community</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <h5>Connect, Share, and Grow Together</h5>
+                    <p>Our community brings together educators, parents, and researchers from around the world to exchange ideas and support one another.</p>
+
+                    <div class="row mt-4">
+                        <div class="col-md-6">
+                            <h6>💬 Discussion Topics</h6>
+                            <ul>
+                                <li>Inclusive classroom strategies</li>
+                                <li>Behavioral intervention techniques</li>
+                                <li>Parent-to-parent support</li>
+                            </ul>
+                        </div>
+                        <div class="col-md-6">
+                            <h6>🌍 Global Reach</h6>
+                            <ul>
+                                <li>Educators from 15+ countries</li>
+                                <li>Multilingual resources</li>
+                                <li>Cross-cultural best practices</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="mt-3 p-3" style="background-color: #f0f4f8; border-radius: 8px;">
+                        <strong>🌟 Coming Soon:</strong> Live webinars, expert Q&A sessions, and a resource-sharing platform.
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <a href="community.html" class="btn" style="background-color: #f9c900; color: #003366; font-weight: bold;">Join Community →</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- ======================================== -->
+    <!-- MODAL 3: AI Chat -->
+    <!-- ======================================== -->
+    <div class="modal fade" id="modalAIChat" tabindex="-1" aria-labelledby="modalAIChatLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header" style="background-color: #003366; color: white;">
+                    <h5 class="modal-title fw-bold" id="modalAIChatLabel">💬 AI-Powered Emotional Support</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <h5>Affective AI for Stress Relief and Communication</h5>
+                    <p>Our AI chat system is designed to recognize and respond to human emotions, providing a safe space for users to practice conversations and release pressure.</p>
+
+                    <div class="row mt-4">
+                        <div class="col-md-6">
+                            <h6>🧠 Key Capabilities</h6>
+                            <ul>
+                                <li>Emotion recognition from text input</li>
+                                <li>Empathetic and supportive responses</li>
+                                <li>Conversation practice for social skills</li>
+                            </ul>
+                        </div>
+                        <div class="col-md-6">
+                            <h6>🎯 Target Users</h6>
+                            <ul>
+                                <li>Children with communication challenges</li>
+                                <li>Parents needing emotional support</li>
+                                <li>Teachers managing classroom stress</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="mt-3 p-3" style="background-color: #f0f4f8; border-radius: 8px;">
+                        <strong>🚧 Status:</strong> Prototype stage. Built with NLP and affective computing techniques. Full version planned with LLM integration (Llama 3 / Qwen).
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <a href="chatbox.html" class="btn" style="background-color: #f9c900; color: #003366; font-weight: bold;">Try AI Chat →</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- ======================================== -->
+    <!-- Bootstrap 5.3 JS Bundle (includes Modal) -->
+    <!-- ======================================== -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    
-    <!-- ===== ✅ 引入你自己的 JavaScript 文件 ===== -->
+
+    <!-- Your custom script (optional, for extra behavior) -->
     <script src="script.js"></script>
+
 </body>
 </html>
