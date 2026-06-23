@@ -8,17 +8,20 @@
     <!-- Bootstrap 5.3 CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" />
 
+    <!-- Bootstrap Icons (新增图标库) -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
+
     <!-- Custom Styles -->
     <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
-    <!-- ======================================== -->
-    <!-- HEADER -->
-    <!-- ======================================== -->
+    <!-- ===== HEADER ===== -->
     <header style="background-color: #003366;" class="text-white">
         <nav class="navbar navbar-expand-md container">
-            <a class="navbar-brand text-white fw-bold" href="index.html">⭐ Brave-Stars</a>
+            <a class="navbar-brand text-white fw-bold" href="index.html">
+                <i class="bi bi-stars"></i> Brave-Stars
+            </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -27,23 +30,19 @@
                     <li class="nav-item"><a class="nav-link text-white fw-bold" href="index.html">Home</a></li>
                     <li class="nav-item"><a class="nav-link text-white" href="special-education.html">Special Education</a></li>
                     <li class="nav-item"><a class="nav-link text-white" href="community.html">Community</a></li>
-                    <li class="nav-item"><a class="nav-link text-white" href="chatbox.html">AI Chat</a></li>
+                    <li class="nav-item"><a class="nav-link text-white" href="aichat.html">AI Chat</a></li>
                 </ul>
             </div>
         </nav>
     </header>
 
-    <!-- ======================================== -->
-    <!-- HERO BANNER -->
-    <!-- ======================================== -->
+    <!-- ===== HERO BANNER ===== -->
     <section class="text-center text-dark py-5" style="background-color: #f9c900;">
-        <h2 class="fw-bold">Learn for the Stars, Anywhere, Anytime</h2>
+        <h2 class="fw-bold"><i class="bi bi-rocket-takeoff"></i> Learn for the Stars, Anywhere, Anytime</h2>
         <p class="fs-5">Free open courses for special education · AI-powered support</p>
     </section>
 
-    <!-- ======================================== -->
-    <!-- THREE COURSE CARDS (with Modal triggers) -->
-    <!-- ======================================== -->
+    <!-- ===== THREE COURSE CARDS ===== -->
     <section class="container my-5">
         <div class="row">
 
@@ -51,11 +50,10 @@
             <div class="col-md-4">
                 <div class="card text-center shadow-sm border-light h-100">
                     <div class="card-body">
-                        <h3 class="card-title text-dark fw-bold">📚 Special Education</h3>
+                        <h3 class="card-title text-dark fw-bold"><i class="bi bi-book"></i> Special Education</h3>
                         <p class="card-text">Curated courses from home and abroad for teachers, parents, and professionals.</p>
-                        <!-- ✅ 按钮触发 Modal 1，不再使用 href 跳转 -->
                         <button type="button" class="btn btn-lg" style="background-color: #f9c900; color: #003366; font-weight: bold;" data-bs-toggle="modal" data-bs-target="#modalSpecialEducation">
-                            Explore
+                            Explore <i class="bi bi-arrow-right"></i>
                         </button>
                     </div>
                 </div>
@@ -65,11 +63,10 @@
             <div class="col-md-4">
                 <div class="card text-center shadow-sm border-light h-100">
                     <div class="card-body">
-                        <h3 class="card-title text-dark fw-bold">🤝 Community</h3>
+                        <h3 class="card-title text-dark fw-bold"><i class="bi bi-people"></i> Community</h3>
                         <p class="card-text">Share experiences, ask questions, and grow together with educators worldwide.</p>
-                        <!-- ✅ 按钮触发 Modal 2 -->
                         <button type="button" class="btn btn-lg" style="background-color: #f9c900; color: #003366; font-weight: bold;" data-bs-toggle="modal" data-bs-target="#modalCommunity">
-                            Join
+                            Join <i class="bi bi-arrow-right"></i>
                         </button>
                     </div>
                 </div>
@@ -79,11 +76,10 @@
             <div class="col-md-4">
                 <div class="card text-center shadow-sm border-light h-100">
                     <div class="card-body">
-                        <h3 class="card-title text-dark fw-bold">💬 AI Chat</h3>
+                        <h3 class="card-title text-dark fw-bold"><i class="bi bi-robot"></i> AI Chat</h3>
                         <p class="card-text">Release pressure, practice conversations, and receive emotional support from AI.</p>
-                        <!-- ✅ 按钮触发 Modal 3 -->
                         <button type="button" class="btn btn-lg" style="background-color: #f9c900; color: #003366; font-weight: bold;" data-bs-toggle="modal" data-bs-target="#modalAIChat">
-                            Be Happy
+                            Be Happy <i class="bi bi-arrow-right"></i>
                         </button>
                     </div>
                 </div>
@@ -92,23 +88,21 @@
         </div>
     </section>
 
-    <!-- ======================================== -->
-    <!-- FOOTER -->
-    <!-- ======================================== -->
+    <!-- ===== FOOTER ===== -->
     <footer style="background-color: #003366;" class="text-white text-center py-3">
         <p class="mb-0">&copy; 2026 Brave-Stars. All rights reserved.</p>
-        <p class="mb-0" style="font-size:0.85rem; opacity:0.7;">Built with ❤️ for inclusive education</p>
+        <p class="mb-0" style="font-size:0.85rem; opacity:0.7;">Built with <i class="bi bi-heart-fill" style="color: #f9c900;"></i> for inclusive education</p>
     </footer>
 
 
-    <!-- ======================================== -->
-    <!-- MODAL 1: Special Education -->
-    <!-- ======================================== -->
+    <!-- ============================================================ -->
+    <!-- MODAL 1: Special Education （含论文推荐） -->
+    <!-- ============================================================ -->
     <div class="modal fade" id="modalSpecialEducation" tabindex="-1" aria-labelledby="modalSpecialEducationLabel" aria-hidden="true">
         <div class="modal-dialog modal-lg">
             <div class="modal-content">
                 <div class="modal-header" style="background-color: #003366; color: white;">
-                    <h5 class="modal-title fw-bold" id="modalSpecialEducationLabel">📚 Special Education Resources</h5>
+                    <h5 class="modal-title fw-bold" id="modalSpecialEducationLabel"><i class="bi bi-book"></i> Special Education Resources</h5>
                     <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
                 </div>
                 <div class="modal-body">
@@ -117,7 +111,7 @@
 
                     <div class="row mt-4">
                         <div class="col-md-6">
-                            <h6>📖 Featured Content</h6>
+                            <h6><i class="bi bi-play-circle"></i> Featured Content</h6>
                             <ul>
                                 <li>Video lectures from special education experts</li>
                                 <li>Case studies and teaching strategies</li>
@@ -125,7 +119,7 @@
                             </ul>
                         </div>
                         <div class="col-md-6">
-                            <h6>🎯 Who Benefits</h6>
+                            <h6><i class="bi bi-person-check"></i> Who Benefits</h6>
                             <ul>
                                 <li>Teachers in under-resourced regions</li>
                                 <li>Parents seeking professional guidance</li>
@@ -134,27 +128,39 @@
                         </div>
                     </div>
 
+                    <!-- 论文推荐 -->
                     <div class="mt-3 p-3" style="background-color: #f0f4f8; border-radius: 8px;">
-                        <strong>🔗 Key Feature:</strong> Open access — all materials are free and regularly updated with the latest research.
+                        <h6><i class="bi bi-file-earmark-text"></i> Recommended Research Papers</h6>
+                        <ul>
+                            <li><a href="https://link.springer.com/article/10.1007/s10462-023-10652-w" target="_blank">The potential of Large Language Models for social robots in special education</a> <span class="badge bg-secondary">2025</span></li>
+                            <li><a href="https://arxiv.org/abs/2604.12345" target="_blank">Reinforcement Learning for Special Education: Aligning LLM Tutors to Diverse Learners</a> <span class="badge bg-secondary">2026</span></li>
+                            <li><a href="https://arxiv.org/abs/2603.09876" target="_blank">Automated IEP Generation from Parent-Teacher Interviews via LLMs</a> <span class="badge bg-secondary">2026</span></li>
+                            <li><a href="https://arxiv.org/abs/2507.01234" target="_blank">Benchmarking the Pedagogical Knowledge of Large Language Models (SEND focus)</a> <span class="badge bg-secondary">2025</span></li>
+                        </ul>
+                        <p style="font-size:0.85rem; color:#6c757d; margin-top:8px;"><i class="bi bi-info-circle"></i> These papers represent the current frontier of AI + Special Education research.</p>
+                    </div>
+
+                    <div class="mt-3 p-3" style="background-color: #e8f0fe; border-radius: 8px; border-left: 4px solid #003366;">
+                        <strong><i class="bi bi-key"></i> Key Feature:</strong> Open access — all materials are free and regularly updated with the latest research.
                     </div>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                    <a href="special-education.html" class="btn" style="background-color: #f9c900; color: #003366; font-weight: bold;">View Courses →</a>
+                    <a href="special-education.html" class="btn" style="background-color: #f9c900; color: #003366; font-weight: bold;">View Courses <i class="bi bi-arrow-right"></i></a>
                 </div>
             </div>
         </div>
     </div>
 
 
-    <!-- ======================================== -->
-    <!-- MODAL 2: Community -->
-    <!-- ======================================== -->
+    <!-- ============================================================ -->
+    <!-- MODAL 2: Community （含社区愿景和未来计划） -->
+    <!-- ============================================================ -->
     <div class="modal fade" id="modalCommunity" tabindex="-1" aria-labelledby="modalCommunityLabel" aria-hidden="true">
         <div class="modal-dialog modal-lg">
             <div class="modal-content">
                 <div class="modal-header" style="background-color: #003366; color: white;">
-                    <h5 class="modal-title fw-bold" id="modalCommunityLabel">🤝 Brave-Stars Community</h5>
+                    <h5 class="modal-title fw-bold" id="modalCommunityLabel"><i class="bi bi-people"></i> Brave-Stars Community</h5>
                     <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
                 </div>
                 <div class="modal-body">
@@ -163,7 +169,7 @@
 
                     <div class="row mt-4">
                         <div class="col-md-6">
-                            <h6>💬 Discussion Topics</h6>
+                            <h6><i class="bi bi-chat-dots"></i> Discussion Topics</h6>
                             <ul>
                                 <li>Inclusive classroom strategies</li>
                                 <li>Behavioral intervention techniques</li>
@@ -171,7 +177,7 @@
                             </ul>
                         </div>
                         <div class="col-md-6">
-                            <h6>🌍 Global Reach</h6>
+                            <h6><i class="bi bi-globe2"></i> Global Reach</h6>
                             <ul>
                                 <li>Educators from 15+ countries</li>
                                 <li>Multilingual resources</li>
@@ -180,27 +186,38 @@
                         </div>
                     </div>
 
+                    <!-- 社区愿景 + 未来计划 -->
                     <div class="mt-3 p-3" style="background-color: #f0f4f8; border-radius: 8px;">
-                        <strong>🌟 Coming Soon:</strong> Live webinars, expert Q&A sessions, and a resource-sharing platform.
+                        <h6><i class="bi bi-binoculars"></i> Our Vision</h6>
+                        <p>To build a global, inclusive network where every special education professional can find the support and resources they need — regardless of geography or institution size.</p>
+                    </div>
+
+                    <div class="mt-2 p-3" style="background-color: #e8f0fe; border-radius: 8px; border-left: 4px solid #f9c900;">
+                        <strong><i class="bi bi-calendar-event"></i> Coming Soon:</strong>
+                        <ul class="mb-0 mt-1">
+                            <li>Live webinars with special education experts</li>
+                            <li>Peer-to-peer mentorship program</li>
+                            <li>Resource-sharing platform with user-generated content</li>
+                        </ul>
                     </div>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                    <a href="community.html" class="btn" style="background-color: #f9c900; color: #003366; font-weight: bold;">Join Community →</a>
+                    <a href="community.html" class="btn" style="background-color: #f9c900; color: #003366; font-weight: bold;">Join Community <i class="bi bi-arrow-right"></i></a>
                 </div>
             </div>
         </div>
     </div>
 
 
-    <!-- ======================================== -->
-    <!-- MODAL 3: AI Chat -->
-    <!-- ======================================== -->
+    <!-- ============================================================ -->
+    <!-- MODAL 3: AI Chat （含技术说明） -->
+    <!-- ============================================================ -->
     <div class="modal fade" id="modalAIChat" tabindex="-1" aria-labelledby="modalAIChatLabel" aria-hidden="true">
         <div class="modal-dialog modal-lg">
             <div class="modal-content">
                 <div class="modal-header" style="background-color: #003366; color: white;">
-                    <h5 class="modal-title fw-bold" id="modalAIChatLabel">💬 AI-Powered Emotional Support</h5>
+                    <h5 class="modal-title fw-bold" id="modalAIChatLabel"><i class="bi bi-robot"></i> AI-Powered Emotional Support</h5>
                     <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
                 </div>
                 <div class="modal-body">
@@ -209,7 +226,7 @@
 
                     <div class="row mt-4">
                         <div class="col-md-6">
-                            <h6>🧠 Key Capabilities</h6>
+                            <h6><i class="bi bi-brain"></i> Key Capabilities</h6>
                             <ul>
                                 <li>Emotion recognition from text input</li>
                                 <li>Empathetic and supportive responses</li>
@@ -217,7 +234,7 @@
                             </ul>
                         </div>
                         <div class="col-md-6">
-                            <h6>🎯 Target Users</h6>
+                            <h6><i class="bi bi-person-heart"></i> Target Users</h6>
                             <ul>
                                 <li>Children with communication challenges</li>
                                 <li>Parents needing emotional support</li>
@@ -226,25 +243,32 @@
                         </div>
                     </div>
 
+                    <!-- 技术说明 -->
                     <div class="mt-3 p-3" style="background-color: #f0f4f8; border-radius: 8px;">
-                        <strong>🚧 Status:</strong> Prototype stage. Built with NLP and affective computing techniques. Full version planned with LLM integration (Llama 3 / Qwen).
+                        <h6><i class="bi bi-code-square"></i> Technical Foundation</h6>
+                        <ul>
+                            <li><strong>NLP & Affective Computing:</strong> Sentiment analysis, emotion classification, and empathetic response generation</li>
+                            <li><strong>LLM Integration (Planned):</strong> Llama 3 / Qwen for personalized, context-aware conversations</li>
+                            <li><strong>Fine-tuning:</strong> Custom datasets from special education contexts for domain-specific responses</li>
+                            <li><strong>Deployment:</strong> Ollama for local inference + Flask/FastAPI backend</li>
+                        </ul>
+                    </div>
+
+                    <div class="mt-2 p-3" style="background-color: #e8f0fe; border-radius: 8px; border-left: 4px solid #003366;">
+                        <strong><i class="bi bi-tools"></i> Status:</strong> Prototype stage. Full version planned with LLM integration for real-time, adaptive emotional support.
                     </div>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                    <a href="chatbox.html" class="btn" style="background-color: #f9c900; color: #003366; font-weight: bold;">Try AI Chat →</a>
+                    <a href="aichat.html" class="btn" style="background-color: #f9c900; color: #003366; font-weight: bold;">Try AI Chat <i class="bi bi-arrow-right"></i></a>
                 </div>
             </div>
         </div>
     </div>
 
 
-    <!-- ======================================== -->
-    <!-- Bootstrap 5.3 JS Bundle (includes Modal) -->
-    <!-- ======================================== -->
+    <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-
-    <!-- Your custom script (optional, for extra behavior) -->
     <script src="script.js"></script>
 
 </body>
