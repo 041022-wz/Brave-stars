@@ -1,0 +1,191 @@
+/* ===== RESET & BASE ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', 'Segoe UI', sans-serif;
+    background-color: #f4f6f9;
+    color: #1e293b;
+    line-height: 1.6;
+}
+
+/* ===== HEADER ===== */
+header {
+    background-color: #003366;
+    color: white;
+    padding: 18px 24px;
+    text-align: center;
+}
+
+header h1 {
+    font-size: 2.2rem;
+    margin-bottom: 8px;
+}
+
+header nav ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+header nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.05rem;
+    padding: 4px 8px;
+    border-radius: 4px;
+    transition: background-color 0.2s;
+}
+
+header nav ul li a:hover {
+    background-color: rgba(255,255,255,0.15);
+    text-decoration: underline;
+}
+
+/* ===== MAIN CONTENT (for special-education page) ===== */
+.main-content {
+    display: flex;
+    max-width: 1100px;
+    margin: 40px auto;
+    padding: 0 20px;
+    gap: 30px;
+    align-items: flex-start;
+}
+
+/* ===== SIDEBAR ===== */
+.sidebar {
+    width: 220px;
+    background-color: white;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+    border: 1px solid #e2e8f0;
+    flex-shrink: 0;
+}
+
+.sidebar h3 {
+    color: #003366;
+    font-size: 1.2rem;
+    margin-bottom: 16px;
+    border-bottom: 2px solid #f9c900;
+    padding-bottom: 8px;
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+}
+
+.sidebar ul li {
+    margin: 6px 0;
+}
+
+.sidebar ul li a {
+    color: #003366;
+    text-decoration: none;
+    display: block;
+    padding: 6px 10px;
+    border-radius: 6px;
+    font-size: 0.95rem;
+    transition: background-color 0.2s;
+}
+
+.sidebar ul li a:hover {
+    background-color: #eef2f7;
+    text-decoration: none;
+}
+
+/* ===== CONTENT AREA ===== */
+.content {
+    flex: 1;
+    background-color: white;
+    padding: 24px 28px;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+    border: 1px solid #e2e8f0;
+}
+
+.content h2 {
+    color: #003366;
+    margin-bottom: 12px;
+}
+
+.video-container {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.video-container iframe {
+    width: 100%;
+    max-width: 560px;
+    height: 315px;
+    border-radius: 8px;
+}
+
+/* ===== BUTTONS ===== */
+.btn-join, .btn-start {
+    display: inline-block;
+    padding: 12px 32px;
+    background-color: #f9c900;
+    color: #003366;
+    text-decoration: none;
+    border-radius: 30px;
+    font-weight: bold;
+    font-size: 1.05rem;
+    transition: background-color 0.3s, transform 0.2s;
+    margin-top: 12px;
+    border: none;
+    cursor: pointer;
+}
+
+.btn-join:hover, .btn-start:hover {
+    background-color: #e0a800;
+    transform: translateY(-2px);
+    color: #003366;
+}
+
+/* ===== CARDS (index page) ===== */
+.card {
+    transition: transform 0.3s, box-shadow 0.3s;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+}
+
+/* ===== FOOTER ===== */
+footer {
+    background-color: #003366;
+    color: white;
+    text-align: center;
+    padding: 24px 20px;
+    margin-top: 40px;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+    .main-content {
+        flex-direction: column;
+    }
+    .sidebar {
+        width: 100%;
+    }
+    .video-container iframe {
+        height: 200px;
+    }
+    header h1 {
+        font-size: 1.6rem;
+    }
+    .card {
+        margin-bottom: 16px;
+    }
+}

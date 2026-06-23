@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Special Education · Brave-Stars</title>
+    <link rel="stylesheet" href="style.css" />
+    <script>
+        function changeVideo(course) {
+            const iframe = document.getElementById("video-frame");
+            const videos = {
+                'community': 'https://www.youtube.com/embed/dQw4w9WgXcQ',
+                'chat-ai': 'https://www.youtube.com/embed/dQw4w9WgXcQ',
+                'course1': 'https://www.youtube.com/embed/dQw4w9WgXcQ',
+                'course2': 'https://www.youtube.com/embed/dQw4w9WgXcQ',
+                'course3': 'https://www.youtube.com/embed/dQw4w9WgXcQ'
+            };
+            iframe.src = videos[course] || videos['community'];
+        }
+    </script>
+</head>
+<body>
+
+    <header>
+        <h1>📚 Special Education</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">🏠 Home</a></li>
+                <li><a href="community.html">🤝 Community</a></li>
+                <li><a href="chatbox.html">💬 AI Chat</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="main-content">
+
+        <aside class="sidebar">
+            <h3>Course Menu</h3>
+            <ul>
+                <li><a href="#" onclick="changeVideo('community')">Community Building</a></li>
+                <li><a href="#" onclick="changeVideo('chat-ai')">Affective AI for Kids</a></li>
+                <li><a href="#" onclick="changeVideo('course1')">Autism: Early Intervention</a></li>
+                <li><a href="#" onclick="changeVideo('course2')">Inclusive Classroom Strategies</a></li>
+                <li><a href="#" onclick="changeVideo('course3')">Parent Training & Support</a></li>
+            </ul>
+        </aside>
+
+        <section class="content">
+            <h2>Special Education Course Overview</h2>
+            <p>
+                This course series covers evidence-based teaching strategies, behavioral interventions,
+                and inclusive practices for children with diverse learning needs.
+            </p>
+
+            <div class="video-container">
+                <iframe id="video-frame"
+                        width="560" height="315"
+                        src="https://www.youtube.com/embed/dQw4w9WgXcQ"
+                        frameborder="0"
+                        allowfullscreen>
+                </iframe>
+            </div>
+        </section>
+
+    </div>
+
+    <footer>
+        <p>&copy; 2026 Brave-Stars. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>
