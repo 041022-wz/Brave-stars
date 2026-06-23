@@ -10,6 +10,9 @@ body {
     background-color: #f4f6f9;
     color: #1e293b;
     line-height: 1.7;
+    min-height: 100vh;        
+    display: flex;        
+    flex-direction: column;
 }
 
 /* ===== 字体层级 ===== */
@@ -291,6 +294,7 @@ footer {
     padding: 24px 20px;
     margin-top: 40px;
     font-size: 0.95rem;
+    margin-top: auto; 
 }
 
 /* ===== RESPONSIVE ===== */
