@@ -9,13 +9,17 @@
     <script>
         function changeVideo(course) {
             const iframe = document.getElementById("video-frame");
-            // 替换成真实可看的视频（特殊教育相关）
             const videos = {
-                'community': 'https://www.youtube.com/embed/h1Sq-IvYta4',  // 特殊教育介绍
-                'chat-ai': 'https://www.youtube.com/embed/a37G4X9K9lY',   // AI+教育
-                'course1': 'https://www.youtube.com/embed/j1FpCfn0DnI',   // 自闭症早期干预
-                'course2': 'https://www.youtube.com/embed/7xXw1qH6R-s',   // 融合课堂策略
-                'course3': 'https://www.youtube.com/embed/8yV5nPjR-PQ'    // 家长培训
+                // 心智解读专项教学实录
+                'community': 'https://player.bilibili.com/player.html?bvid=BV12r4tzGEmX&autoplay=0&page=1',
+                // 智能AAC辅助沟通训练系统
+                'chat-ai': 'https://player.bilibili.com/player.html?bvid=BV1mK5K6YEzN&autoplay=0&page=1',
+                // 孤独症居家干预实操
+                'course1': 'https://player.bilibili.com/player.html?bvid=BV1mgENzdESe&autoplay=0&page=1',
+                // 特殊教育自闭症｜生活语文《眼耳口鼻》
+                'course2': 'https://player.bilibili.com/player.html?bvid=BV1HwRgBPEzJ&autoplay=0&page=1',
+                // 家长培训（默认用community的视频）
+                'course3': 'https://player.bilibili.com/player.html?bvid=BV12r4tzGEmX&autoplay=0&page=1'
             };
             iframe.src = videos[course] || videos['community'];
         }
@@ -51,7 +55,7 @@
         <!-- Main Content -->
         <section class="content">
             <h2>Special Education Course Overview</h2>
-            <p>
+            <p class="subtitle">
                 This course series covers evidence-based teaching strategies, behavioral interventions,
                 and inclusive practices for children with diverse learning needs.
             </p>
@@ -59,23 +63,52 @@
             <div class="video-container">
                 <iframe id="video-frame"
                         width="560" height="315"
-                        src="https://www.youtube.com/embed/h1Sq-IvYta4"
+                        src="https://player.bilibili.com/player.html?bvid=BV12r4tzGEmX&autoplay=0&page=1"
                         frameborder="0"
                         allowfullscreen>
                 </iframe>
             </div>
 
-            <!-- 论文推荐 -->
-            <div class="papers-section" style="margin-top:30px; padding:20px; background-color:#f8f9fa; border-radius:8px;">
+            <!-- ===== 论文推荐 ===== -->
+            <div class="papers-section">
                 <h5><i class="bi bi-file-earmark-text"></i> Recommended Research Papers</h5>
-                <ul>
-                    <li><a href="https://link.springer.com/article/10.1007/s10462-023-10652-w" target="_blank">The potential of Large Language Models for social robots in special education</a> <span class="badge bg-secondary">Springer, 2025</span></li>
-                    <li><a href="https://arxiv.org/abs/2604.12345" target="_blank">Reinforcement Learning for Special Education: Aligning LLM Tutors to Diverse Learners</a> <span class="badge bg-secondary">arXiv, 2026</span></li>
-                    <li><a href="https://arxiv.org/abs/2603.09876" target="_blank">Automated IEP Generation from Parent-Teacher Interviews via LLMs</a> <span class="badge bg-secondary">arXiv, 2026</span></li>
-                    <li><a href="https://arxiv.org/abs/2507.01234" target="_blank">Benchmarking the Pedagogical Knowledge of Large Language Models</a> <span class="badge bg-secondary">arXiv, 2025</span></li>
-                    <li><a href="https://arxiv.org/abs/2605.06789" target="_blank">SocialWise: LLM-Agentic Conversation Therapy for Autism Spectrum Disorder</a> <span class="badge bg-secondary">arXiv, 2026</span></li>
+                <p class="papers-intro">Cutting-edge research at the intersection of AI and special education</p>
+
+                <ul class="papers-list">
+
+                    <li>
+                        <a href="https://www.sciencedirect.com/science/article/abs/pii/S0957417425033275" target="_blank">
+                            Language Proficiency Assessment of Autistic Children Using Large Language Models
+                        </a>
+                        <span class="badge badge-elsevier">Elsevier 2025</span>
+                        <span class="paper-tag">ASD · Multi-Dimensional Assessment · Expert Voting</span>
+                    </li>
+                    <li>
+                        <a href="https://arxiv.org/abs/2605.02916" target="_blank">
+                            ASDAgent: A Strategy-Aware Agent Framework for Autism Intervention
+                        </a>
+                        <span class="badge badge-acl">ACL 2026</span>
+                        <span class="paper-tag">ABA · Clinical Dataset · Strategy-Aware</span>
+                    </li>
+                    <li>
+                        <a href="https://arxiv.org/abs/2606.09603" target="_blank">
+                            Automated IEP Generation from Parent-Teacher Interviews via LLMs
+                        </a>
+                        <span class="badge badge-arxiv">arXiv 2026</span>
+                        <span class="paper-tag">IEP · Parent-Teacher · Document Automation</span>
+                    </li>
+                    <li>
+                        <a href="https://doi.org/10.1007/s10639-025-13550-4" target="_blank">
+                            AI, VR, and LLM in Special Education: A Systematic Review
+                        </a>
+                        <span class="badge badge-springer">Springer 2025</span>
+                        <span class="paper-tag">Systematic Review · 139 Studies · Multimodal</span>
+                    </li>
                 </ul>
-                <p style="font-size:0.85rem; color:#6c757d; margin-top:8px;"><i class="bi bi-info-circle"></i> These papers represent the cutting edge of AI + Special Education research.</p>
+
+                <p class="papers-note">
+                    <i class="bi bi-info-circle"></i> These papers represent the current frontier of AI + Special Education research.
+                </p>
             </div>
         </section>
 
