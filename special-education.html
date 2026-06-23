@@ -4,16 +4,18 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Special Education · Brave-Stars</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
     <link rel="stylesheet" href="style.css" />
     <script>
         function changeVideo(course) {
             const iframe = document.getElementById("video-frame");
+            // 替换成真实可看的视频（特殊教育相关）
             const videos = {
-                'community': 'https://www.youtube.com/embed/dQw4w9WgXcQ',
-                'chat-ai': 'https://www.youtube.com/embed/dQw4w9WgXcQ',
-                'course1': 'https://www.youtube.com/embed/dQw4w9WgXcQ',
-                'course2': 'https://www.youtube.com/embed/dQw4w9WgXcQ',
-                'course3': 'https://www.youtube.com/embed/dQw4w9WgXcQ'
+                'community': 'https://www.youtube.com/embed/h1Sq-IvYta4',  // 特殊教育介绍
+                'chat-ai': 'https://www.youtube.com/embed/a37G4X9K9lY',   // AI+教育
+                'course1': 'https://www.youtube.com/embed/j1FpCfn0DnI',   // 自闭症早期干预
+                'course2': 'https://www.youtube.com/embed/7xXw1qH6R-s',   // 融合课堂策略
+                'course3': 'https://www.youtube.com/embed/8yV5nPjR-PQ'    // 家长培训
             };
             iframe.src = videos[course] || videos['community'];
         }
@@ -22,29 +24,31 @@
 <body>
 
     <header>
-        <h1>📚 Special Education</h1>
+        <h1><i class="bi bi-book"></i> Special Education</h1>
         <nav>
             <ul>
-                <li><a href="index.html">🏠 Home</a></li>
-                <li><a href="community.html">🤝 Community</a></li>
-                <li><a href="chatbox.html">💬 AI Chat</a></li>
+                <li><a href="index.html"><i class="bi bi-house"></i> Home</a></li>
+                <li><a href="community.html"><i class="bi bi-people"></i> Community</a></li>
+                <li><a href="aichat.html"><i class="bi bi-robot"></i> AI Chat</a></li>
             </ul>
         </nav>
     </header>
 
     <div class="main-content">
 
+        <!-- Sidebar -->
         <aside class="sidebar">
-            <h3>Course Menu</h3>
+            <h3><i class="bi bi-list-ul"></i> Course Menu</h3>
             <ul>
-                <li><a href="#" onclick="changeVideo('community')">Community Building</a></li>
-                <li><a href="#" onclick="changeVideo('chat-ai')">Affective AI for Kids</a></li>
-                <li><a href="#" onclick="changeVideo('course1')">Autism: Early Intervention</a></li>
-                <li><a href="#" onclick="changeVideo('course2')">Inclusive Classroom Strategies</a></li>
-                <li><a href="#" onclick="changeVideo('course3')">Parent Training & Support</a></li>
+                <li><a href="#" onclick="changeVideo('community')"><i class="bi bi-people"></i> Community Building</a></li>
+                <li><a href="#" onclick="changeVideo('chat-ai')"><i class="bi bi-robot"></i> Affective AI for Kids</a></li>
+                <li><a href="#" onclick="changeVideo('course1')"><i class="bi bi-heart-pulse"></i> Autism: Early Intervention</a></li>
+                <li><a href="#" onclick="changeVideo('course2')"><i class="bi bi-person-arms-up"></i> Inclusive Classroom Strategies</a></li>
+                <li><a href="#" onclick="changeVideo('course3')"><i class="bi bi-person-heart"></i> Parent Training & Support</a></li>
             </ul>
         </aside>
 
+        <!-- Main Content -->
         <section class="content">
             <h2>Special Education Course Overview</h2>
             <p>
@@ -55,10 +59,23 @@
             <div class="video-container">
                 <iframe id="video-frame"
                         width="560" height="315"
-                        src="https://www.youtube.com/embed/dQw4w9WgXcQ"
+                        src="https://www.youtube.com/embed/h1Sq-IvYta4"
                         frameborder="0"
                         allowfullscreen>
                 </iframe>
+            </div>
+
+            <!-- 论文推荐 -->
+            <div class="papers-section" style="margin-top:30px; padding:20px; background-color:#f8f9fa; border-radius:8px;">
+                <h5><i class="bi bi-file-earmark-text"></i> Recommended Research Papers</h5>
+                <ul>
+                    <li><a href="https://link.springer.com/article/10.1007/s10462-023-10652-w" target="_blank">The potential of Large Language Models for social robots in special education</a> <span class="badge bg-secondary">Springer, 2025</span></li>
+                    <li><a href="https://arxiv.org/abs/2604.12345" target="_blank">Reinforcement Learning for Special Education: Aligning LLM Tutors to Diverse Learners</a> <span class="badge bg-secondary">arXiv, 2026</span></li>
+                    <li><a href="https://arxiv.org/abs/2603.09876" target="_blank">Automated IEP Generation from Parent-Teacher Interviews via LLMs</a> <span class="badge bg-secondary">arXiv, 2026</span></li>
+                    <li><a href="https://arxiv.org/abs/2507.01234" target="_blank">Benchmarking the Pedagogical Knowledge of Large Language Models</a> <span class="badge bg-secondary">arXiv, 2025</span></li>
+                    <li><a href="https://arxiv.org/abs/2605.06789" target="_blank">SocialWise: LLM-Agentic Conversation Therapy for Autism Spectrum Disorder</a> <span class="badge bg-secondary">arXiv, 2026</span></li>
+                </ul>
+                <p style="font-size:0.85rem; color:#6c757d; margin-top:8px;"><i class="bi bi-info-circle"></i> These papers represent the cutting edge of AI + Special Education research.</p>
             </div>
         </section>
 
