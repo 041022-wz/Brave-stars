@@ -4,42 +4,193 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Community · Brave-Stars</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
     <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
     <header>
-        <h1>🤝 Community</h1>
+        <h1><i class="bi bi-people"></i> Community</h1>
         <nav>
             <ul>
-                <li><a href="index.html">🏠 Home</a></li>
-                <li><a href="special-education.html">📚 Special Education</a></li>
-                <li><a href="chatbox.html">💬 AI Chat</a></li>
+                <li><a href="index.html"><i class="bi bi-house"></i> Home</a></li>
+                <li><a href="special-education.html"><i class="bi bi-book"></i> Special Education</a></li>
+                <li><a href="aichat.html"><i class="bi bi-robot"></i> AI Chat</a></li>
             </ul>
         </nav>
     </header>
 
-    <section style="max-width:800px; margin:40px auto; padding:0 20px;">
-        <h2>Welcome to the Brave-Stars Community</h2>
-        <p>
-            This is a space for teachers, parents, and researchers to share experiences,
-            ask questions, and support each other.
-        </p>
-        <p>Topics we discuss:</p>
-        <ul>
-            <li>🧩 Classroom strategies for inclusive education</li>
-            <li>📖 Sharing teaching resources and case studies</li>
-            <li>❤️ Emotional support and parent-to-parent advice</li>
-        </ul>
+    <section style="max-width:900px; margin:40px auto; padding:0 20px;">
 
-        <h3>Join the Conversation</h3>
-        <p>Click below to access our discussion forum (coming soon).</p>
-        <a href="#" class="btn-join">Join Now</a>
+        <!-- 注册表单 -->
+        <div style="background:white; padding:30px; border-radius:12px; box-shadow:0 2px 8px rgba(0,0,0,0.06); border:1px solid #e2e8f0;">
+            <h2><i class="bi bi-person-plus"></i> Join the Brave-Stars Community</h2>
+            <p>Register below to connect with educators, parents, and researchers worldwide.</p>
+
+            <form id="registerForm" onsubmit="handleRegister(event)">
+                <div class="row">
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label fw-bold">Full Name</label>
+                        <input type="text" id="regName" class="form-control" placeholder="e.g., Wei Zheng" required />
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label fw-bold">Email</label>
+                        <input type="email" id="regEmail" class="form-control" placeholder="you@example.com" required />
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label fw-bold">Role</label>
+                        <select id="regRole" class="form-select">
+                            <option value="teacher">👨‍🏫 Teacher</option>
+                            <option value="parent">👨‍👩‍👦 Parent</option>
+                            <option value="researcher">🔬 Researcher</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label fw-bold">Interests</label>
+                        <select id="regInterests" class="form-select">
+                            <option value="autism">Autism Spectrum Disorder</option>
+                            <option value="adhd">ADHD</option>
+                            <option value="learning-disabilities">Learning Disabilities</option>
+                            <option value="inclusive-ed">Inclusive Education</option>
+                            <option value="ai-edtech">AI in Education</option>
+                        </select>
+                    </div>
+                </div>
+                <button type="submit" class="btn" style="background-color:#f9c900; color:#003366; font-weight:bold;">
+                    <i class="bi bi-send"></i> Register Now
+                </button>
+            </form>
+
+            <!-- 注册成功提示（初始隐藏） -->
+            <div id="registerSuccess" style="display:none; margin-top:20px; padding:15px; background-color:#d4edda; border-radius:8px; border-left:4px solid #28a745;">
+                <h6><i class="bi bi-check-circle-fill" style="color:#28a745;"></i> Registration Successful!</h6>
+                <p id="regSuccessMessage">Welcome to the Brave-Stars community!</p>
+            </div>
+        </div>
+
+        <!-- 模拟讨论区 -->
+        <div style="margin-top:40px; background:white; padding:30px; border-radius:12px; box-shadow:0 2px 8px rgba(0,0,0,0.06); border:1px solid #e2e8f0;">
+            <h3><i class="bi bi-chat-dots"></i> Community Discussions</h3>
+            <p style="color:#6c757d;">Recent posts from our members — join the conversation!</p>
+
+            <div id="discussionFeed">
+                <!-- 模拟帖子会由 JavaScript 动态生成 -->
+            </div>
+
+            <!-- 添加新讨论 -->
+            <div style="margin-top:20px; padding-top:20px; border-top:1px solid #e2e8f0;">
+                <h6><i class="bi bi-pencil-square"></i> Share Your Thoughts</h6>
+                <div class="input-group">
+                    <input type="text" id="newPostInput" class="form-control" placeholder="What's on your mind? (e.g., 'Looking for advice on IEP strategies')" />
+                    <button class="btn" style="background-color:#003366; color:white;" onclick="addDiscussionPost()">
+                        <i class="bi bi-send"></i> Post
+                    </button>
+                </div>
+            </div>
+        </div>
+
     </section>
 
     <footer>
         <p>&copy; 2026 Brave-Stars. All rights reserved.</p>
     </footer>
+
+    <script>
+        // ---- 注册处理 ----
+        function handleRegister(event) {
+            event.preventDefault();
+            const name = document.getElementById('regName').value.trim();
+            const email = document.getElementById('regEmail').value.trim();
+            const role = document.getElementById('regRole').value;
+            const interests = document.getElementById('regInterests').value;
+
+            if (!name || !email) {
+                alert('Please fill in your name and email.');
+                return;
+            }
+
+            // 显示成功消息
+            const roleLabels = {
+                'teacher': 'Teacher',
+                'parent': 'Parent',
+                'researcher': 'Researcher',
+                'other': 'Other'
+            };
+            const interestLabels = {
+                'autism': 'Autism Spectrum Disorder',
+                'adhd': 'ADHD',
+                'learning-disabilities': 'Learning Disabilities',
+                'inclusive-ed': 'Inclusive Education',
+                'ai-edtech': 'AI in Education'
+            };
+            document.getElementById('regSuccessMessage').textContent =
+                `Welcome, ${name}! You've joined as a ${roleLabels[role]} interested in ${interestLabels[interests]}. Check your email (${email}) for confirmation.`;
+            document.getElementById('registerSuccess').style.display = 'block';
+
+            // 自动在讨论区生成一条欢迎帖
+            const posts = document.getElementById('discussionFeed');
+            const welcomePost = document.createElement('div');
+            welcomePost.className = 'discussion-post';
+            welcomePost.style.cssText = 'padding:12px 16px; background:#f8f9fa; border-radius:8px; margin-bottom:10px; border-left:3px solid #f9c900;';
+            welcomePost.innerHTML = `
+                <strong>${name}</strong> <span style="color:#6c757d; font-size:0.85rem;">just joined as a ${roleLabels[role]} · ${new Date().toLocaleDateString()}</span>
+                <p style="margin:4px 0 0 0;">👋 Hello everyone! I'm excited to connect and learn from this community.</p>
+            `;
+            posts.prepend(welcomePost);
+
+            // 清空表单
+            document.getElementById('regName').value = '';
+            document.getElementById('regEmail').value = '';
+        }
+
+        // ---- 讨论区初始化 ----
+        function initializeDiscussions() {
+            const feed = document.getElementById('discussionFeed');
+            const samplePosts = [
+                { name: 'Sarah Chen', role: 'Teacher', date: 'Jun 22, 2026', content: '📚 Just finished a workshop on inclusive classroom design. Happy to share resources with anyone interested!' },
+                { name: 'Dr. James Park', role: 'Researcher', date: 'Jun 21, 2026', content: '🔬 New paper on LLM-based IEP generation just dropped. Link in the resources section!' },
+                { name: 'Maria Rodriguez', role: 'Parent', date: 'Jun 20, 2026', content: '❤️ Looking for advice on helping my child with ADHD stay focused during homework. Any tips?' },
+                { name: 'Tom Zhang', role: 'Teacher', date: 'Jun 19, 2026', content: '🧩 Using AI chatbots for social skills practice with my ASD students. Game changer!' }
+            ];
+            samplePosts.forEach(post => {
+                const div = document.createElement('div');
+                div.className = 'discussion-post';
+                div.style.cssText = 'padding:12px 16px; background:#f8f9fa; border-radius:8px; margin-bottom:10px; border-left:3px solid #003366;';
+                div.innerHTML = `
+                    <strong>${post.name}</strong> <span style="color:#6c757d; font-size:0.85rem;">${post.role} · ${post.date}</span>
+                    <p style="margin:4px 0 0 0;">${post.content}</p>
+                `;
+                feed.appendChild(div);
+            });
+        }
+
+        // ---- 添加新讨论帖 ----
+        function addDiscussionPost() {
+            const input = document.getElementById('newPostInput');
+            const text = input.value.trim();
+            if (!text) {
+                alert('Please write something before posting.');
+                return;
+            }
+
+            const feed = document.getElementById('discussionFeed');
+            const div = document.createElement('div');
+            div.className = 'discussion-post';
+            div.style.cssText = 'padding:12px 16px; background:#e8f0fe; border-radius:8px; margin-bottom:10px; border-left:3px solid #f9c900;';
+            div.innerHTML = `
+                <strong>You</strong> <span style="color:#6c757d; font-size:0.85rem;">Just now</span>
+                <p style="margin:4px 0 0 0;">${text}</p>
+            `;
+            feed.prepend(div);
+            input.value = '';
+        }
+
+        // 页面加载时初始化讨论区
+        document.addEventListener('DOMContentLoaded', initializeDiscussions);
+    </script>
 
 </body>
 </html>
