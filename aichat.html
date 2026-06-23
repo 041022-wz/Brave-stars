@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AI Chat · Brave-Stars</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+    <header>
+        <h1><i class="bi bi-robot"></i> Chat with Affective AI</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html"><i class="bi bi-house"></i> Home</a></li>
+                <li><a href="special-education.html"><i class="bi bi-book"></i> Special Education</a></li>
+                <li><a href="community.html"><i class="bi bi-people"></i> Community</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Chat Interface -->
+    <section style="max-width:900px; margin:30px auto; padding:0 20px;">
+        <div style="display:flex; gap:24px; flex-wrap:wrap;">
+
+            <!-- 聊天区域 -->
+            <div style="flex:2; min-width:300px; background:white; border-radius:12px; box-shadow:0 2px 8px rgba(0,0,0,0.06); border:1px solid #e2e8f0; display:flex; flex-direction:column; height:500px;">
+                <!-- 聊天头部 -->
+                <div style="padding:16px 20px; border-bottom:1px solid #e2e8f0; background-color:#f8f9fa; border-radius:12px 12px 0 0;">
+                    <span class="badge" style="background-color:#28a745;"><i class="bi bi-circle-fill" style="font-size:0.5rem;"></i> Online</span>
+                    <span style="margin-left:12px; font-weight:bold;">Affective AI Assistant</span>
+                    <span style="margin-left:12px; color:#6c757d; font-size:0.85rem;">— here to support you</span>
+                </div>
+
+                <!-- 消息列表 -->
+                <div id="chatMessages" style="flex:1; padding:16px 20px; overflow-y:auto; background:#fafbfc;">
+                    <!-- 初始消息由 JS 生成 -->
+                </div>
+
+                <!-- 输入区域 -->
+                <div style="padding:12px 16px; border-top:1px solid #e2e8f0; display:flex; gap:8px; background:white; border-radius:0 0 12px 12px;">
+                    <input type="text" id="chatInput" class="form-control" placeholder="Type your message..." onkeydown="if(event.key==='Enter') sendMessage();" />
+                    <button class="btn" style="background-color:#f9c900; color:#003366; font-weight:bold;" onclick="sendMessage()">
+                        <i class="bi bi-send"></i> Send
+                    </button>
+                </div>
+            </div>
+
+            <!-- 右侧面板：AI状态 + 能力展示 -->
+            <div style="flex:1; min-width:200px; display:flex; flex-direction:column; gap:16px;">
+
+                <!-- AI Status -->
+                <div style="background:white; padding:20px; border-radius:12px; border:1px solid #e2e8f0; box-shadow:0 2px 8px rgba(0,0,0,0.06);">
+                    <h6><i class="bi bi-graph-up"></i> AI Status</h6>
+                    <div id="aiStatus" style="font-size:0.9rem; color:#28a745;">
+                        <i class="bi bi-check-circle-fill"></i> Ready
+                    </div>
+                    <hr />
+                    <div style="font-size:0.85rem; color:#6c757d;">
+                        <div><i class="bi bi-chat"></i> Messages: <span id="msgCount">0</span></div>
+                        <div><i class="bi bi-clock"></i> Session: <span id="sessionTime">00:00</span></div>
+                    </div>
+                </div>
+
+                <!-- AI Capabilities -->
+                <div style="background:white; padding:20px; border-radius:12px; border:1px solid #e2e8f0; box-shadow:0 2px 8px rgba(0,0,0,0.06);">
+                    <h6><i class="bi bi-cpu"></i> AI Capabilities</h6>
+                    <ul style="font-size:0.85rem; padding-left:18px; margin-bottom:0;">
+                        <li><span class="badge bg-primary" style="font-size:0.7rem;">Active</span> Sentiment Analysis</li>
+                        <li><span class="badge bg-primary" style="font-size:0.7rem;">Active</span> Empathetic Response</li>
+                        <li><span class="badge bg-secondary" style="font-size:0.7rem;">Beta</span> Personalized Suggestions</li>
+                        <li><span class="badge bg-secondary" style="font-size:0.7rem;">Beta</span> Conversation Strategy</li>
+                    </ul>
+                </div>
+
+                <!-- Quick Actions -->
+                <div style="background:white; padding:20px; border-radius:12px; border:1px solid #e2e8f0; box-shadow:0 2px 8px rgba(0,0,0,0.06);">
+                    <h6><i class="bi bi-lightning"></i> Quick Actions</h6>
+                    <div style="display:flex; flex-wrap:wrap; gap:6px;">
+                        <button class="btn btn-sm btn-outline-secondary" onclick="quickMessage('I feel stressed today. Can you help?')">😰 Stress</button>
+                        <button class="btn btn-sm btn-outline-secondary" onclick="quickMessage('My child is having trouble focusing. Any advice?')">🧒 Focus</button>
+                        <button class="btn btn-sm btn-outline-secondary" onclick="quickMessage('I need some encouragement.')">💪 Encouragement</button>
+                        <button class="btn btn-sm btn-outline-secondary" onclick="quickMessage('Can you practice a conversation with me?')">💬 Practice</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 Brave-Stars. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // ============================================================
+        // AI Chat Simulation
+        // ============================================================
+
+        const chatMessages = document.getElementById('chatMessages');
+        const chatInput = document.getElementById('chatInput');
+        const msgCount = document.getElementById('msgCount');
+        const sessionTime = document.getElementById('sessionTime');
+        const aiStatus = document.getElementById('aiStatus');
+
+        let messageCounter = 0;
+        let sessionSeconds = 0;
+        let sessionTimer = null;
+
+        // ---- AI 响应库 ----
+        const aiResponses = {
+            'stress': [
+                "I hear you. It's okay to feel stressed. Would you like to try a 2-minute breathing exercise together? 🧘",
+                "Stress is tough, but you're not alone. What's one small thing that might help you feel a bit better right now?",
+                "I'm here to listen. Can you tell me more about what's been on your mind lately?"
+            ],
+            'focus': [
+                "That's a common challenge! Have you tried breaking tasks into smaller, 5-minute chunks? 🎯",
+                "For many children with focus difficulties, a visual schedule can work wonders. Would you like me to help you create one?",
+                "I understand. Sometimes a short movement break can help reset attention. Have you tried that before?"
+            ],
+            'encouragement': [
+                "You're doing an amazing job. Just by being here and seeking support, you're showing incredible strength. 💪",
+                "Remember: progress, not perfection. Every small step counts. You've got this! ⭐",
+                "I believe in you. What's one thing you've accomplished today that you're proud of?"
+            ],
+            'practice': [
+                "Of course! Let's practice a conversation. I'll be a friend, and you can start by telling me about your day. 😊",
+                "Great idea! Let's practice introducing yourself. I'll go first: 'Hi, I'm Brave, your AI assistant. Nice to meet you!'",
+                "Sure! Let's practice asking for help. You can say: 'Excuse me, could you please help me with this?'"
+            ],
+            'default': [
+                "That's a really thoughtful question. Let me think about it for a moment... 🤔",
+                "I appreciate you sharing that with me. How does that make you feel?",
+                "That's interesting! Can you tell me more so I can better understand?",
+                "I'm here to support you. What would be most helpful for you right now?"
+            ]
+        };
+
+        // ---- 检测用户意图 ----
+        function detectIntent(text) {
+            const lower = text.toLowerCase();
+            if (lower.includes('stress') || lower.includes('anxious') || lower.includes('worry') || lower.includes('tired')) return 'stress';
+            if (lower.includes('focus') || lower.includes('attention') || lower.includes('distract') || lower.includes('concentrate')) return 'focus';
+            if (lower.includes('encourage') || lower.includes('proud') || lower.includes('believe') || lower.includes('hope')) return 'encouragement';
+            if (lower.includes('practice') || lower.includes('conversation') || lower.includes('talk') || lower.includes('speak')) return 'practice';
+            return 'default';
+        }
+
+        // ---- 获取AI响应 ----
+        function getAIResponse(intent) {
+            const responses = aiResponses[intent] || aiResponses['default'];
+            return responses[Math.floor(Math.random() * responses.length)];
+        }
+
+        // ---- 模拟"AI正在思考" ----
+        function showTyping() {
+            aiStatus.innerHTML = '<i class="bi bi-hourglass-split"></i> Thinking...';
+            aiStatus.style.color = '#f9c900';
+        }
+
+        function hideTyping() {
+            aiStatus.innerHTML = '<i class="bi bi-check-circle-fill"></i> Ready';
+            aiStatus.style.color = '#28a745';
+        }
+
+        // ---- 发送消息 ----
+        function sendMessage() {
+            const text = chatInput.value.trim();
+            if (!text) return;
+
+            // 添加用户消息
+            addMessage('user', text);
+            chatInput.value = '';
+            messageCounter++;
+            msgCount.textContent = messageCounter;
+
+            // 显示思考状态
+            showTyping();
+
+            // 模拟AI响应延迟
+            const delay = 800 + Math.random() * 1200;
+            setTimeout(() => {
+                const intent = detectIntent(text);
+                const response = getAIResponse(intent);
+                addMessage('ai', response);
+                hideTyping();
+                messageCounter++;
+                msgCount.textContent = messageCounter;
+            }, delay);
+        }
+
+        // ---- 添加消息到聊天界面 ----
+        function addMessage(type, text) {
+            const div = document.createElement('div');
+            div.style.cssText = `
+                display: flex;
+                margin-bottom: 12px;
+                justify-content: ${type === 'user' ? 'flex-end' : 'flex-start'};
+            `;
+
+            const bubble = document.createElement('div');
+            bubble.style.cssText = `
+                max-width: 75%;
+                padding: 10px 16px;
+                border-radius: 16px;
+                background: ${type === 'user' ? '#f9c900' : 'white'};
+                color: ${type === 'user' ? '#003366' : '#1e293b'};
+                border: ${type === 'ai' ? '1px solid #e2e8f0' : 'none'};
+                box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+                font-size: 0.95rem;
+                line-height: 1.5;
+            `;
+            bubble.textContent = text;
+
+            // 如果是AI消息，显示情感标签
+            if (type === 'ai') {
+                const label = document.createElement('div');
+                label.style.cssText = 'font-size:0.7rem; color:#6c757d; margin-top:4px;';
+                const tags = ['💬 Supportive', '🧠 Empathetic', '🎯 Focused', '💪 Encouraging'];
+                label.textContent = '🏷️ ' + tags[Math.floor(Math.random() * tags.length)];
+                bubble.appendChild(label);
+            }
+
+            div.appendChild(bubble);
+            chatMessages.appendChild(div);
+
+            // 滚动到底部
+            chatMessages.scrollTop = chatMessages.scrollHeight;
+        }
+
+        // ---- 快捷按钮 ----
+        function quickMessage(text) {
+            chatInput.value = text;
+            sendMessage();
+        }
+
+        // ---- 初始化聊天 ----
+        function initChat() {
+            // 欢迎消息
+            addMessage('ai', "👋 Hi there! I'm Brave, your Affective AI assistant. I'm here to listen, support, and help you practice conversations. How are you feeling today?");
+            messageCounter++;
+            msgCount.textContent = messageCounter;
+
+            // 启动会话计时器
+            sessionTimer = setInterval(() => {
+                sessionSeconds++;
+                const m = String(Math.floor(sessionSeconds / 60)).padStart(2, '0');
+                const s = String(sessionSeconds % 60).padStart(2, '0');
+                sessionTime.textContent = `${m}:${s}`;
+            }, 1000);
+        }
+
+        // 页面加载时初始化
+        document.addEventListener('DOMContentLoaded', initChat);
+    </script>
+
+</body>
+</html>
