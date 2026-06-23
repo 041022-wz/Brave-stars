@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="assets/banner.png" alt="Brave-Stars Banner" width="100%" />
+  <img src="Banner.jpg" alt="Brave-Stars Banner" width="100%" />
 </p>
 
 # ⭐ Brave-Stars
@@ -27,6 +27,8 @@ The platform currently features three core modules:
 [![Brave-Stars Demo](https://img.youtube.com/vi/PLACEHOLDER/0.jpg)](https://youtu.be/PLACEHOLDER)
 
 *Click the image above to watch a 45-second walkthrough of the platform.*
+
+> **Note:** Replace `PLACEHOLDER` with your actual YouTube video ID after recording your demo.
 
 
 ## 🧠 My Motivation
