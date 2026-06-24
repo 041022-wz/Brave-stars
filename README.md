@@ -104,16 +104,5 @@ During the process, I encountered challenges with LLM deployment and reached out
 
 ## 🔗 Live Demo
 
-👉 [https://041022-wz.github.io/brave-stars/](https://041022-wz.github.io/brave-stars/)
+👉 [https://041022-wz.github.io/brave-stars/](https://041022-wz.github.io/Brave-stars/)
 
-
-## 📅 Status
-
-- **Version**: v1.0 (concept prototype)
-- **Last Updated**: June 2026
-- **Purpose**: Graduate application portfolio
-
-
-## 📄 License
-
-MIT License © 2026 Wei Zheng
