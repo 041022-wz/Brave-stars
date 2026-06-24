@@ -5,18 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Brave-Stars · Special Education Platform</title>
 
-    <!-- Bootstrap 5.3 CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" />
-
-    <!-- Bootstrap Icons -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
-
-    <!-- Custom Styles -->
     <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
-    <!-- ===== HEADER ===== -->
     <header style="background-color: #003366;" class="text-white">
         <nav class="navbar navbar-expand-md container">
             <a class="navbar-brand text-white fw-bold" href="index.html">
@@ -31,13 +25,11 @@
                     <li class="nav-item"><a class="nav-link text-white" href="special-education.html">Special Education</a></li>
                     <li class="nav-item"><a class="nav-link text-white" href="community.html">Community</a></li>
                     <li class="nav-item"><a class="nav-link text-white" href="aichat.html">AI Chat</a></li>
-                    <li class="nav-item"><a class="nav-link text-white" href="roadmap.html">📄 Roadmap</a></li>
                 </ul>
             </div>
         </nav>
     </header>
 
-    <!-- ===== HERO BANNER（黄色字体已优化） ===== -->
     <section class="text-center py-5" style="background-color: #f9c900;">
         <h2 class="fw-bold" style="color: #002244;"><i class="bi bi-rocket-takeoff"></i> Learn for the Stars, Anywhere, Anytime</h2>
         <p class="fs-5" style="color: #002244;">Free open courses for special education · AI-powered support</p>
@@ -46,43 +38,39 @@
         </p>
     </section>
 
-    <!-- ===== THREE COURSE CARDS ===== -->
-    <section class="container my-5">
+    <section class="container my-5" style="flex:1;">
         <div class="row">
 
-            <!-- Card 1: Special Education -->
             <div class="col-md-4">
                 <div class="card text-center shadow-sm border-light h-100">
                     <div class="card-body">
                         <h3 class="card-title text-dark fw-bold"><i class="bi bi-book"></i> Special Education</h3>
                         <p class="card-text">Curated courses from home and abroad for teachers, parents, and professionals.</p>
-                        <button type="button" class="btn btn-lg" style="background-color: #f9c900; color: #003366; font-weight: bold;" data-bs-toggle="modal" data-bs-target="#modalSpecialEducation">
+                        <button type="button" class="btn btn-primary-yellow btn-custom" data-bs-toggle="modal" data-bs-target="#modalSpecialEducation">
                             Explore <i class="bi bi-arrow-right"></i>
                         </button>
                     </div>
                 </div>
             </div>
 
-            <!-- Card 2: Community -->
             <div class="col-md-4">
                 <div class="card text-center shadow-sm border-light h-100">
                     <div class="card-body">
                         <h3 class="card-title text-dark fw-bold"><i class="bi bi-people"></i> Community</h3>
                         <p class="card-text">Share experiences, ask questions, and grow together with educators worldwide.</p>
-                        <button type="button" class="btn btn-lg" style="background-color: #f9c900; color: #003366; font-weight: bold;" data-bs-toggle="modal" data-bs-target="#modalCommunity">
+                        <button type="button" class="btn btn-primary-yellow btn-custom" data-bs-toggle="modal" data-bs-target="#modalCommunity">
                             Join <i class="bi bi-arrow-right"></i>
                         </button>
                     </div>
                 </div>
             </div>
 
-            <!-- Card 3: AI Chat -->
             <div class="col-md-4">
                 <div class="card text-center shadow-sm border-light h-100">
                     <div class="card-body">
                         <h3 class="card-title text-dark fw-bold"><i class="bi bi-robot"></i> AI Chat</h3>
                         <p class="card-text">Release pressure, practice conversations, and receive emotional support from AI.</p>
-                        <button type="button" class="btn btn-lg" style="background-color: #f9c900; color: #003366; font-weight: bold;" data-bs-toggle="modal" data-bs-target="#modalAIChat">
+                        <button type="button" class="btn btn-primary-yellow btn-custom" data-bs-toggle="modal" data-bs-target="#modalAIChat">
                             Be Happy <i class="bi bi-arrow-right"></i>
                         </button>
                     </div>
@@ -92,16 +80,12 @@
         </div>
     </section>
 
-    <!-- ===== FOOTER ===== -->
     <footer style="background-color: #003366;" class="text-white text-center py-3">
         <p class="mb-0">&copy; 2026 Brave-Stars. All rights reserved.</p>
         <p class="mb-0" style="font-size:0.85rem; opacity:0.8;">Built with <i class="bi bi-heart-fill" style="color: #f9c900;"></i> for inclusive education</p>
     </footer>
 
-
-    <!-- ============================================================ -->
-    <!-- MODAL 1: Special Education -->
-    <!-- ============================================================ -->
+    <!-- Modals (保持不变，与之前相同) -->
     <div class="modal fade" id="modalSpecialEducation" tabindex="-1" aria-labelledby="modalSpecialEducationLabel" aria-hidden="true">
         <div class="modal-dialog modal-lg">
             <div class="modal-content">
@@ -112,7 +96,6 @@
                 <div class="modal-body">
                     <h5>What We Offer</h5>
                     <p>Brave-Stars curates high-quality special education resources from both domestic and international sources, making them freely accessible to teachers, parents, and researchers.</p>
-
                     <div class="row mt-4">
                         <div class="col-md-6">
                             <h6><i class="bi bi-play-circle"></i> Featured Content</h6>
@@ -131,8 +114,6 @@
                             </ul>
                         </div>
                     </div>
-
-                    <!-- 论文推荐 -->
                     <div class="mt-3 p-3" style="background-color: #f0f4f8; border-radius: 8px;">
                         <h6><i class="bi bi-file-earmark-text"></i> Recommended Research Papers</h6>
                         <ul>
@@ -142,23 +123,18 @@
                             <li><a href="https://doi.org/10.1007/s10639-025-13550-4" target="_blank">AI, VR, and LLM in Special Education: A Systematic Review</a> <span class="badge bg-secondary">Springer 2025</span></li>
                         </ul>
                     </div>
-
                     <div class="mt-3 p-3" style="background-color: #e8f0fe; border-radius: 8px; border-left: 4px solid #003366; font-style: italic; color: #003366;">
                         <strong>💭 My thinking:</strong> “Teachers need curated knowledge, not information overload. AI should serve them, not replace them.”
                     </div>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                    <a href="special-education.html" class="btn" style="background-color: #f9c900; color: #003366; font-weight: bold;">View Courses <i class="bi bi-arrow-right"></i></a>
+                    <a href="special-education.html" class="btn btn-secondary-blue btn-custom">View Courses <i class="bi bi-arrow-right"></i></a>
                 </div>
             </div>
         </div>
     </div>
 
-
-    <!-- ============================================================ -->
-    <!-- MODAL 2: Community -->
-    <!-- ============================================================ -->
     <div class="modal fade" id="modalCommunity" tabindex="-1" aria-labelledby="modalCommunityLabel" aria-hidden="true">
         <div class="modal-dialog modal-lg">
             <div class="modal-content">
@@ -169,7 +145,6 @@
                 <div class="modal-body">
                     <h5>Connect, Share, and Grow Together</h5>
                     <p>Our community brings together educators, parents, and researchers from around the world to exchange ideas and support one another.</p>
-
                     <div class="row mt-4">
                         <div class="col-md-6">
                             <h6><i class="bi bi-chat-dots"></i> Discussion Topics</h6>
@@ -188,28 +163,22 @@
                             </ul>
                         </div>
                     </div>
-
                     <div class="mt-3 p-3" style="background-color: #f0f4f8; border-radius: 8px;">
                         <h6><i class="bi bi-binoculars"></i> Our Vision</h6>
                         <p>To build a global, inclusive network where every special education professional can find the support and resources they need — regardless of geography or institution size.</p>
                     </div>
-
                     <div class="mt-2 p-3" style="background-color: #e8f0fe; border-radius: 8px; border-left: 4px solid #f9c900; font-style: italic; color: #003366;">
                         <strong>💭 My thinking:</strong> “No educator should feel alone. Community is the missing piece in EdTech.”
                     </div>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                    <a href="community.html" class="btn" style="background-color: #f9c900; color: #003366; font-weight: bold;">Join Community <i class="bi bi-arrow-right"></i></a>
+                    <a href="community.html" class="btn btn-secondary-blue btn-custom">Join Community <i class="bi bi-arrow-right"></i></a>
                 </div>
             </div>
         </div>
     </div>
 
-
-    <!-- ============================================================ -->
-    <!-- MODAL 3: AI Chat -->
-    <!-- ============================================================ -->
     <div class="modal fade" id="modalAIChat" tabindex="-1" aria-labelledby="modalAIChatLabel" aria-hidden="true">
         <div class="modal-dialog modal-lg">
             <div class="modal-content">
@@ -220,7 +189,6 @@
                 <div class="modal-body">
                     <h5>Affective AI for Stress Relief and Communication</h5>
                     <p>Our AI chat system is designed to recognize and respond to human emotions, providing a safe space for users to practice conversations and release pressure.</p>
-
                     <div class="row mt-4">
                         <div class="col-md-6">
                             <h6><i class="bi bi-brain"></i> Key Capabilities</h6>
@@ -239,7 +207,6 @@
                             </ul>
                         </div>
                     </div>
-
                     <div class="mt-3 p-3" style="background-color: #f0f4f8; border-radius: 8px;">
                         <h6><i class="bi bi-code-square"></i> Technical Foundation</h6>
                         <ul>
@@ -249,21 +216,18 @@
                             <li><strong>Deployment:</strong> Ollama for local inference + Flask/FastAPI backend</li>
                         </ul>
                     </div>
-
                     <div class="mt-3 p-3" style="background-color: #e8f0fe; border-radius: 8px; border-left: 4px solid #003366; font-style: italic; color: #003366;">
                         <strong>💭 My thinking:</strong> “Before we diagnose, we must first listen. AI in special education starts with empathy.”
                     </div>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                    <a href="aichat.html" class="btn" style="background-color: #f9c900; color: #003366; font-weight: bold;">Try AI Chat <i class="bi bi-arrow-right"></i></a>
+                    <a href="aichat.html" class="btn btn-secondary-blue btn-custom">Try AI Chat <i class="bi bi-arrow-right"></i></a>
                 </div>
             </div>
         </div>
     </div>
 
-
-    <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="script.js"></script>
 
