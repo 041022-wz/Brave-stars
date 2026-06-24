@@ -138,7 +138,7 @@ The platform consists of four main pages:
 
 ## Live Demo
 
-<https://041022-wz.github.io/brave-stars/>
+<https://041022-wz.github.io/Brave-stars/>
 
 
 ## Repository Structure
